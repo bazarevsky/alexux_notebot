@@ -21,7 +21,7 @@ trait DefaultService extends HttpService {
           complete {
             <html>
               <body>
-                <h1>Say hello to <i>spray-routing</i> on <i>spray-can</i>!</h1>
+                <h1>Say hello, i'm notebot</h1>
               </body>
             </html>
           }
