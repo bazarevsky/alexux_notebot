@@ -8,9 +8,9 @@ import MediaTypes._
 /**
   * Created by v.bazarevsky on 4/9/2016.
   */
-class SprayActor extends Actor with DefaultService {
+class SprayActor extends Actor with DefaultService with CategoryService with NoteService {
   def actorRefFactory = context
-  def receive = runRoute(defaultRoute)
+  def receive = runRoute(defaultRoute ~ categoryRoute ~ noteRoute)
 }
 
 trait DefaultService extends HttpService {

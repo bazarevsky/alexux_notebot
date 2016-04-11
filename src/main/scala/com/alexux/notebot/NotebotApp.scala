@@ -21,11 +21,11 @@ object NotebotApp extends App {
   val mongoConnectionString = Properties.envOrElse("MONGOLAB_URI", "mongodb://localhost:27017/test")
   val mongoDbName = Properties.envOrElse("MONGOLAB_DBNAME", "test")
 
-  val repositoryContext = new RepositoryContext(mongoConnectionString, mongoDbName)
-  repositoryContext.categoryRepository.add(Category("test", "cater"))
-
-  val results = repositoryContext.categoryRepository.list()
-  results.foreach(c => println(c.name))
+//  val repositoryContext = new RepositoryContext(mongoConnectionString, mongoDbName)
+//  repositoryContext.categoryRepository.add(Category("test", "cater"))
+//
+//  val results = repositoryContext.categoryRepository.list()
+//  results.foreach(c => println(c.name))
 
   implicit val timeout = Timeout(5.seconds)
   IO(Http) ask Http.Bind(service, interface = "0.0.0.0", port = port)

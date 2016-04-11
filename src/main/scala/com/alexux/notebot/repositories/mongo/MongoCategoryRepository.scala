@@ -14,7 +14,6 @@ class MongoCategoryRepository(connectionString: String, databaseName: String, co
 
   override def add(category: Category): Category = {
     val categoryMongo = MongoDBObject(
-     // "_id" -> category.id,
       "name" -> category.name,
       "description" -> category.description
     )
